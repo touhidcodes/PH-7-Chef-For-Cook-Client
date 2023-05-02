@@ -1,0 +1,13 @@
+.active {
+	background: rgba(236, 78, 50, 0.872);
+	padding: 8px 12px;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: 500;
+	color: white;
+}
+.notActive {
+	font-size: 18px;
+	font-weight: 600;
+	padding: 0 10px;
+}
