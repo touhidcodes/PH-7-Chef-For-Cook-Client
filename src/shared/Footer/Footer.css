@@ -1,0 +1,11 @@
+.footer {
+	background: #1a1919;
+}
+.footer-text {
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 16px;
+}
+.footer ul li {
+	font-size: 16px;
+	padding: 5px;
+}
