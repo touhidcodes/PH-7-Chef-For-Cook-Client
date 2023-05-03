@@ -15,12 +15,16 @@ const router = createBrowserRouter([
 				element: <Home />,
 				loader: () =>
 					fetch(
-						"https://ph-7-assignment-11-chef-for-cook-server.vercel.app/chefs"
+						"https://ph-7-assignment-11-chef-for-cook-server-touhidcodes.vercel.app/chefs"
 					),
 			},
 			{
 				path: "recipes/:id",
 				element: <Recipes />,
+				loader: ({ params }) =>
+					fetch(
+						`https://ph-7-assignment-11-chef-for-cook-server-touhidcodes.vercel.app/chefs/${params.id}`
+					),
 			},
 			{
 				path: "/blogs",
