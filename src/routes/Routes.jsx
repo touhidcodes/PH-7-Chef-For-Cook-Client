@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home/Home";
 import RecipesSection from "../pages/RecipesSection/RecipesSection/RecipesSection";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
 	{
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "recipes/:id",
-				element: <RecipesSection />,
+				element: (
+					<PrivateRoute>
+						<RecipesSection />
+					</PrivateRoute>
+				),
 				loader: ({ params }) =>
 					fetch(
 						`https://ph-7-assignment-11-chef-for-cook-server-touhidcodes.vercel.app/chefs/${params.id}`

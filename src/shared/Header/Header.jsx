@@ -12,7 +12,7 @@ const Header = () => {
 	return (
 		<div>
 			<div className='navbar bg-base-100 mt-3 flex-col-reverse lg:flex-row gap-4'>
-				<div className='lg:flex-1'>
+				<div className=''>
 					<a className='btn btn-ghost normal-case text-3xl text-error'>
 						Chef for Cook
 					</a>

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthProvider";
 
@@ -7,7 +7,9 @@ const Login = () => {
 	const { logIn } = useContext(AuthContext);
 	const [error, setError] = useState("");
 	const [showPassword, setShowPassword] = useState(false);
+	const navigate = useNavigate();
 	const location = useLocation();
+	console.log(location);
 	const handleLogin = (event) => {
 		setError("");
 		event.preventDefault();
@@ -15,14 +17,14 @@ const Login = () => {
 		const email = form.email.value;
 		const password = form.password.value;
 
-		// const from = location.from
-
+		const from = location.state?.from?.pathname || "/";
+		console.log(from);
 		logIn(email, password)
 			.then((result) => {
 				const loggedUser = result.user;
 				form.reset();
-				console.log(loggedUser);
-				// navigate(from, { replace: true });
+				// console.log(loggedUser);
+				navigate(from, { replace: true });
 			})
 			.catch((error) => {
 				setError(error.message);
