@@ -45,17 +45,17 @@ const RecipeBanner = ({ cook }) => {
 							</div>
 						</div>
 					</figure>
-					<div className='card-body'>
+					<div className='card-body items-center'>
 						<h2 className='card-title text-2xl'>{name}</h2>
 						<p>
-							<span className='font-semibold'>Years of Experience: </span>
+							<span className='font-semibold '>Years of Experience: </span>
 							{experience}
 						</p>
 						<p>
 							<span className='font-semibold'>Numbers of Recipes: </span>
 							{recipes}
 						</p>
-						<div className='card-actions justify-center mt-2'>
+						<div className='card-actions justify-center mt-10'>
 							<button className='btn btn-error text-white font-semibold'>
 								Follow
 							</button>

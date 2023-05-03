@@ -42,9 +42,9 @@ const Recipes = ({ recipe }) => {
 							/>
 							<p className='ml-2 font-semibold'>{ratings}</p>
 						</div>
-						<button className='btn btn-outline btn-error'>
-							<p className='text-red-400 hover:text-white'>Like </p>
-							<HeartIcon className='h-6 w-6 text-red-400 ml-2 hover:text-white' />
+						<button className='btn  btn-error'>
+							<p className=' text-white'>Like </p>
+							<HeartIcon className='h-6 w-6 ml-3 text-white' />
 						</button>
 					</div>
 				</div>

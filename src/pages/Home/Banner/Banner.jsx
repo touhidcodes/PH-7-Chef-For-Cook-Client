@@ -1,5 +1,4 @@
 import React from "react";
-import bg from "../../../assets/img/bg.jpg";
 import slider_1 from "../../../assets/img/1.jpg";
 import slider_2 from "../../../assets/img/2.jpg";
 import slider_3 from "../../../assets/img/3.jpg";
@@ -12,13 +11,6 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 const Banner = () => {
-	// const swiper = new Swiper(".swiper", {
-	// 	modules: [Navigation, Pagination],
-	// 	navigation: {
-	// 		nextEl: ".swiper-button-next",
-	// 		prevEl: ".swiper-button-prev",
-	// 	},
-	// });
 
 	return (
 		<div className='banner mt-16'>
