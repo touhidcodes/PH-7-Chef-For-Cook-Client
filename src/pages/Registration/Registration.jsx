@@ -1,21 +1,40 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthProvider";
 
 const Registration = () => {
+	const { createUser } = useContext(AuthContext);
 	const [showPassword, setShowPassword] = useState(false);
 	const [accept, setAccept] = useState(false);
+	const [error, setError] = useState("");
+	const [success, setSuccess] = useState("");
+
 	const handleRegister = (event) => {
+		setError("");
+		setSuccess("");
 		event.preventDefault();
 		const form = event.target;
 		const name = form.name.value;
 		const email = form.email.value;
 		const password = form.password.value;
 		const url = form.url.value;
-		console.log(name, email, password, url);
+		form.reset();
+		setAccept(false);
+		// console.log(name, email, password, url);
 
 		if (password < 6) {
+			setError("Password must be 6 char");
 			return;
 		}
+
+		createUser(email, password)
+			.then((result) => {
+				const loggedUser = result.user;
+				setSuccess("Successfully account created");
+			})
+			.catch((error) => {
+				setError(error.message);
+			});
 	};
 	const handleShowPassword = (event) => {
 		setShowPassword(event.target.checked);
@@ -27,6 +46,14 @@ const Registration = () => {
 		<div className='card w-1/2 mx-auto bg-base-100 shadow-xl mt-20'>
 			<div className='card-body'>
 				<h2 className='card-title text-3xl mx-auto'>Login to your Account</h2>
+				<div>
+					<p className='mt-3 text-red-500 text-center font-semibold'>
+						{error ? error : ""}
+					</p>
+					<p className='mt-3 text-blue-500 text-center font-semibold'>
+						{success ? success : ""}
+					</p>
+				</div>
 				<form className='mx-auto mt-5' onSubmit={handleRegister}>
 					<div className='flex flex-col '>
 						<label htmlFor='' className='text-xl font-semibold ml-2 mb-2'>
