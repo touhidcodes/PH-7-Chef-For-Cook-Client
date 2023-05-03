@@ -21,13 +21,13 @@ const Banner = () => {
 	// });
 
 	return (
-		<div className='banner'>
-			<div className='grid grid-cols-2 gap-4 p-10'>
-				<div className='mt-8'>
-					<h1 className='text-5xl font-semibold text-red-400 bg-red-100 p-3 rounded-2xl '>
+		<div className='banner mt-16'>
+			<div className='grid grid-cols-1 lg:grid-cols-2 gap-4 p-3 lg:p-10'>
+				<div className='lg:mt-8'>
+					<h1 className='lg:text-5xl font-semibold text-red-400 bg-red-100 p-3 rounded-2xl '>
 						Discover Your Chef With favorite Recipes...
 					</h1>
-					<button className='btn btn-warning mt-5 text-white font-semibold'>
+					<button className='btn btn-warning mt-3 lg:mt-5 text-white font-semibold'>
 						Follow Us
 					</button>
 				</div>
@@ -37,7 +37,7 @@ const Banner = () => {
 						spaceBetween={30}
 						slidesPerView={2}
 						centeredSlides={true}
-						onSlideChange={() => console.log("slide change")}
+						onSlideChange={() => console.log("")}
 						onSwiper={(swiper) => console.log(swiper)}
 						onAutoplay={{
 							delay: 500,
@@ -45,28 +45,28 @@ const Banner = () => {
 						}}
 					>
 						<SwiperSlide>
-							<img src={slider_1} alt='' className='h-96 rounded-xl' />
+							<img src={slider_1} alt='' className='h-60 lg:h-96 rounded-xl' />
 
 							{({ isActive }) => (
 								<div>Current slide is {isActive ? "active" : "not active"}</div>
 							)}
 						</SwiperSlide>
 						<SwiperSlide className='h-96'>
-							<img src={slider_2} alt='' className='h-96 rounded-xl' />
+							<img src={slider_2} alt='' className='h-60 lg:h-96 rounded-xl' />
 						</SwiperSlide>
 						<SwiperSlide>
-							<img src={slider_3} alt='' className='h-96 rounded-xl' />
+							<img src={slider_3} alt='' className='h-60 lg:h-96 rounded-xl' />
 						</SwiperSlide>
 						<SwiperSlide>
-							<img src={slider_4} alt='' className='h-96 rounded-xl' />
-						</SwiperSlide>
-
-						<SwiperSlide>
-							<img src={slider_5} alt='' className='h-96 rounded-xl' />
+							<img src={slider_4} alt='' className='h-60 lg:h-96 rounded-xl' />
 						</SwiperSlide>
 
 						<SwiperSlide>
-							<img src={slider_6} alt='' className='h-96 rounded-xl' />
+							<img src={slider_5} alt='' className='h-60 lg:h-96 rounded-xl' />
+						</SwiperSlide>
+
+						<SwiperSlide>
+							<img src={slider_6} alt='' className='h-60 lg:h-96 rounded-xl' />
 						</SwiperSlide>
 					</Swiper>
 				</div>
