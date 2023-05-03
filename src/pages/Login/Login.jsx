@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { AuthContext } from "../../context/AuthProvider";
 
 const Login = () => {
+	const { user } = useContext(AuthContext);
+	console.log(user);
 	const [showPassword, setShowPassword] = useState(false);
 	const handleLogin = (event) => {
 		event.preventDefault();
