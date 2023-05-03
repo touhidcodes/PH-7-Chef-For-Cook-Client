@@ -24,10 +24,10 @@ const Banner = () => {
 		<div className='banner mt-16'>
 			<div className='grid grid-cols-1 lg:grid-cols-2 gap-4 p-3 lg:p-10'>
 				<div className='lg:mt-8'>
-					<h1 className='lg:text-5xl font-semibold text-red-400 bg-red-100 p-3 rounded-2xl '>
+					<h1 className='lg:text-5xl font-bold text-white  p-3 rounded-2xl '>
 						Discover Your Chef With favorite Recipes...
 					</h1>
-					<button className='btn btn-warning mt-3 lg:mt-5 text-white font-semibold'>
+					<button className='btn btn-warning mt-3 lg:mt-5 text-white font-semibold ml-5'>
 						Follow Us
 					</button>
 				</div>
