@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
 	const { createUser } = useContext(AuthContext);
@@ -8,6 +9,7 @@ const Registration = () => {
 	const [accept, setAccept] = useState(false);
 	const [error, setError] = useState("");
 	const [success, setSuccess] = useState("");
+	const navigate = useNavigate();
 
 	const handleRegister = (event) => {
 		setError("");
@@ -18,7 +20,6 @@ const Registration = () => {
 		const email = form.email.value;
 		const password = form.password.value;
 		const url = form.url.value;
-		form.reset();
 		setAccept(false);
 		// console.log(name, email, password, url);
 
@@ -31,6 +32,21 @@ const Registration = () => {
 			.then((result) => {
 				const loggedUser = result.user;
 				setSuccess("Successfully account created");
+				form.reset();
+				updateUser(loggedUser, name, url);
+				navigate("/");
+			})
+			.catch((error) => {
+				setError(error.message);
+			});
+	};
+	const updateUser = (user, name, url) => {
+		updateProfile(user, {
+			displayName: name,
+			photoURL: url,
+		})
+			.then(() => {
+				setSuccess("profile updated");
 			})
 			.catch((error) => {
 				setError(error.message);
@@ -45,7 +61,7 @@ const Registration = () => {
 	return (
 		<div className='card w-1/2 mx-auto bg-base-100 shadow-xl mt-20'>
 			<div className='card-body'>
-				<h2 className='card-title text-3xl mx-auto'>Login to your Account</h2>
+				<h2 className='card-title text-3xl mx-auto'>Register your Account</h2>
 				<div>
 					<p className='mt-3 text-red-500 text-center font-semibold'>
 						{error ? error : ""}

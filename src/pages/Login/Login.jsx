@@ -4,16 +4,28 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthProvider";
 
 const Login = () => {
-	const { user } = useContext(AuthContext);
-	console.log(user);
+	const { user, logIn } = useContext(AuthContext);
+	const [error, setError] = useState("");
 	const [showPassword, setShowPassword] = useState(false);
 	const handleLogin = (event) => {
+		setError("");
 		event.preventDefault();
 		const form = event.target;
-		const email = form.name.value;
+		const email = form.email.value;
 		const password = form.password.value;
 
-		console.log(email, password);
+		// console.log(email, password);
+
+		logIn(email, password)
+			.then((result) => {
+				const loggedUser = result.user;
+				form.reset();
+				console.log(loggedUser);
+				// navigate(from, { replace: true });
+			})
+			.catch((error) => {
+				setError(error.message);
+			});
 	};
 	const handleShowPassword = (event) => {
 		setShowPassword(event.target.checked);
@@ -22,6 +34,11 @@ const Login = () => {
 		<div className='card w-1/2 mx-auto bg-base-100 shadow-xl mt-20'>
 			<div className='card-body'>
 				<h2 className='card-title text-3xl mx-auto'>Login to your Account</h2>
+				<div>
+					<p className='mt-3 text-red-500 text-center font-semibold'>
+						{error ? error : ""}
+					</p>
+				</div>
 				<form className='mx-auto mt-5' onSubmit={handleLogin}>
 					<div className='flex flex-col '>
 						<label htmlFor='' className='text-xl font-semibold ml-2 mb-2'>
