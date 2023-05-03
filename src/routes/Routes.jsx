@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/main";
 import Blogs from "../pages/Blogs/Blogs";
 import Home from "../pages/Home/Home/Home";
-import Recipes from "../pages/Home/Recipes/Recipes";
+import RecipesSection from "../pages/Home/RecipesSection/RecipesSection";
 
 const router = createBrowserRouter([
 	{
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "recipes/:id",
-				element: <Recipes />,
+				element: <RecipesSection />,
 				loader: ({ params }) =>
 					fetch(
 						`https://ph-7-assignment-11-chef-for-cook-server-touhidcodes.vercel.app/chefs/${params.id}`
