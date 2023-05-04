@@ -21,7 +21,7 @@ const Registration = () => {
 		const password = form.password.value;
 		const url = form.url.value;
 		setAccept(false);
-		// console.log(name, email, password, url);
+		
 
 		if (password < 6) {
 			setError("Password must be 6 char");

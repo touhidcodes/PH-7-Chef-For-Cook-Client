@@ -16,7 +16,6 @@ const RecipesSection = () => {
 	}, []);
 
 	const chef = recipeData?.find((data) => parseInt(data.id) === cook.id);
-	console.log("chef data", chef);
 	return (
 		<div className='mt-10'>
 			<RecipeBanner cook={cook} />

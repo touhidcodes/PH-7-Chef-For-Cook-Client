@@ -9,7 +9,7 @@ const Header = () => {
 	const handleLogOut = () => {
 		logOut();
 	};
-	// console.log(user.photoURL);
+	
 	return (
 		<div>
 			<div className='navbar bg-base-100 mt-3 flex-col-reverse lg:flex-row gap-4'>
