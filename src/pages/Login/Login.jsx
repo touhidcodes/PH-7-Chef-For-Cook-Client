@@ -4,12 +4,12 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthProvider";
 
 const Login = () => {
-	const { logIn } = useContext(AuthContext);
+	const { logIn, gitHubSignIn } = useContext(AuthContext);
 	const [error, setError] = useState("");
 	const [showPassword, setShowPassword] = useState(false);
 	const navigate = useNavigate();
 	const location = useLocation();
-	console.log(location);
+
 	const handleLogin = (event) => {
 		setError("");
 		event.preventDefault();
@@ -18,7 +18,7 @@ const Login = () => {
 		const password = form.password.value;
 
 		const from = location.state?.from?.pathname || "/";
-		console.log(from);
+
 		logIn(email, password)
 			.then((result) => {
 				const loggedUser = result.user;
@@ -32,6 +32,19 @@ const Login = () => {
 	};
 	const handleShowPassword = (event) => {
 		setShowPassword(event.target.checked);
+	};
+
+	const handleGitHubSignIn = () => {
+		gitHubSignIn()
+			.then((result) => {
+				const loggedUser = result.user;
+				form.reset();
+				// console.log(loggedUser);
+				navigate(from, { replace: true });
+			})
+			.catch((error) => {
+				setError(error.message);
+			});
 	};
 	return (
 		<div className='card w-1/2 mx-auto bg-base-100 shadow-xl mt-20'>
@@ -92,7 +105,10 @@ const Login = () => {
 							<FaGoogle className='mr-2' /> Google Sign-In
 						</p>
 					</button>
-					<button className='px-4 py-3 border-2 border-red-400 rounded-xl w-96 text-xl font-semibold hover:bg-red-400 hover:text-white mb-10'>
+					<button
+						className='px-4 py-3 border-2 border-red-400 rounded-xl w-96 text-xl font-semibold hover:bg-red-400 hover:text-white mb-10'
+						onClick={handleGitHubSignIn}
+					>
 						<p className='flex items-center justify-center'>
 							<FaGithub className='mr-2' /> GitHub Sign-In
 						</p>
