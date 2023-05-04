@@ -1,16 +1,30 @@
-import React from 'react';
-import error from "../../assets/img/error.jpg"
+import React from "react";
+import error from "../../assets/img/error.jpg";
+import { Link } from "react-router-dom";
 const Error = () => {
-    return (
-        	<div>
-			<h1 className='text-5xl font-semibold text-center mt-10'>
-				404 Not Found !
-			</h1>
-			<div className='w-6/12 mx-auto'>
-				<img src={error} alt='' />
+	return (
+		<div className='mt-10 px-20'>
+			<div className='grid grid-cols-2 items-center'>
+				<div className='w-full mx-auto'>
+					<img src={error} alt='' />
+				</div>
+				<div className='flex flex-col items-center'>
+					<h1 className='text-6xl font-semibold text-center mt-20 text-red-400'>
+						404 Page Not Found!
+					</h1>
+					<p className='mt-5 px-10'>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+						aliquid, rem similique alias facilis doloremque blanditiis vel ipsa
+						id error consequatur? Nisi vel perferendis ipsum fugiat hic aliquam
+						minima saepe!
+					</p>
+					<button className='btn btn-error mt-10 text-white font-semibold'>
+						<Link to='/'>Go Home</Link>
+					</button>
+				</div>
 			</div>
 		</div>
-    );
+	);
 };
 
 export default Error;

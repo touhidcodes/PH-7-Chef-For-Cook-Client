@@ -7,6 +7,7 @@ import RecipesSection from "../pages/RecipesSection/RecipesSection/RecipesSectio
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
 import PrivateRoute from "./PrivateRoute";
+import Error from "../pages/Error/Error";
 
 const router = createBrowserRouter([
 	{
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
 			{
 				path: "/register",
 				element: <Registration />,
+			},
+			{
+				path: "*",
+				element: <Error />,
 			},
 		],
 	},
