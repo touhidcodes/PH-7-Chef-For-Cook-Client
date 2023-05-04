@@ -4,11 +4,12 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthProvider";
 
 const Login = () => {
-	const { logIn, gitHubSignIn } = useContext(AuthContext);
+	const { logIn, googleSignIn, gitHubSignIn } = useContext(AuthContext);
 	const [error, setError] = useState("");
 	const [showPassword, setShowPassword] = useState(false);
 	const navigate = useNavigate();
 	const location = useLocation();
+		const from = location.state?.from?.pathname || "/";
 
 	const handleLogin = (event) => {
 		setError("");
@@ -17,13 +18,12 @@ const Login = () => {
 		const email = form.email.value;
 		const password = form.password.value;
 
-		const from = location.state?.from?.pathname || "/";
+	
 
 		logIn(email, password)
 			.then((result) => {
 				const loggedUser = result.user;
 				form.reset();
-				// console.log(loggedUser);
 				navigate(from, { replace: true });
 			})
 			.catch((error) => {
@@ -34,12 +34,21 @@ const Login = () => {
 		setShowPassword(event.target.checked);
 	};
 
+	const handleGoogleSignIn = () => {
+		googleSignIn()
+			.then((result) => {
+				const loggedUser = result.user;
+				navigate(from, { replace: true });
+			})
+			.catch((error) => {
+				setError(error.message);
+			});
+	};
+
 	const handleGitHubSignIn = () => {
 		gitHubSignIn()
 			.then((result) => {
 				const loggedUser = result.user;
-				form.reset();
-				// console.log(loggedUser);
 				navigate(from, { replace: true });
 			})
 			.catch((error) => {
@@ -100,7 +109,10 @@ const Login = () => {
 					</Link>
 				</p>
 				<div className='mx-auto flex flex-col mt-10'>
-					<button className='px-4 py-3 border-2 border-red-400 rounded-xl w-96 text-xl font-semibold hover:bg-red-400 hover:text-white mb-5'>
+					<button
+						className='px-4 py-3 border-2 border-red-400 rounded-xl w-96 text-xl font-semibold hover:bg-red-400 hover:text-white mb-5'
+						onClick={handleGoogleSignIn}
+					>
 						<p className='flex items-center justify-center'>
 							<FaGoogle className='mr-2' /> Google Sign-In
 						</p>

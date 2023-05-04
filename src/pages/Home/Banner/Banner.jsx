@@ -30,7 +30,7 @@ const Banner = () => {
 						slidesPerView={2}
 						centeredSlides={true}
 						onSlideChange={() => console.log("")}
-						onSwiper={(swiper) => console.log(swiper)}
+						onSwiper={() => console.log("")}
 						onAutoplay={{
 							delay: 500,
 							disableOnInteraction: false,
