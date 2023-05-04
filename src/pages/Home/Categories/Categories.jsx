@@ -14,7 +14,7 @@ const Categories = () => {
 				{/* card 1 */}
 				<div className='card w-full bg-base-100 shadow-xl h-96'>
 					<figure>
-						<img src={image_1} alt='foods' />
+						<img src={image_1} alt='foods' className='opacity-80' />
 					</figure>
 					<div className='card-body'>
 						<h2 className='card-title text-2xl'>Bangladeshi Foods</h2>
@@ -24,7 +24,7 @@ const Categories = () => {
 				{/* card 2 */}
 				<div className='card w-full bg-base-100 shadow-xl h-96'>
 					<figure>
-						<img src={image_2} alt='foods' />
+						<img src={image_2} alt='foods' className='opacity-80' />
 					</figure>
 					<div className='card-body'>
 						<h2 className='card-title text-2xl'>Japanese Foods</h2>
@@ -34,7 +34,7 @@ const Categories = () => {
 				{/* card 3 */}
 				<div className='card w-full bg-base-100 shadow-xl h-96'>
 					<figure>
-						<img src={image_3} alt='foods' />
+						<img src={image_3} alt='foods' className='opacity-80' />
 					</figure>
 					<div className='card-body'>
 						<h2 className='card-title text-2xl'>Thai Foods</h2>
@@ -44,7 +44,7 @@ const Categories = () => {
 				{/* card 4*/}
 				<div className='card w-full bg-base-100 shadow-xl h-96'>
 					<figure>
-						<img src={image_4} alt='foods' />
+						<img src={image_4} alt='foods' className='opacity-80' />
 					</figure>
 					<div className='card-body'>
 						<h2 className='card-title text-2xl'>American Foods</h2>

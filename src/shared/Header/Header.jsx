@@ -27,15 +27,14 @@ const Header = () => {
 				<div className='flex-none flex-col mb-3 lg:flex-row  gap-2'>
 					<p className='text-inherit font-semibold'>{user?.email}</p>
 					<div className='dropdown dropdown-end'>
-						<label tabIndex={0} className='btn btn-ghost btn-circle avatar'>
-							<div className='w-10 rounded-full'>
+						<label
+							tabIndex={0}
+							className='btn btn-ghost btn-circle avatar placeholder'
+						>
+							<div className=' rounded-full ring ring-red-400 ring-offset-base-100 ring-offset-2 w-10'>
 								{user ? (
 									<div>
-										<img
-											src={user?.photoURL}
-											title={user?.displayName}
-											className='h-full w-full'
-										/>
+										<img src={user?.photoURL} title={user?.displayName} />
 									</div>
 								) : (
 									<div>

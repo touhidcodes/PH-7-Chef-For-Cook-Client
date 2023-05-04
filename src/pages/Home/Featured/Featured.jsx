@@ -12,7 +12,7 @@ const Featured = () => {
 					<img
 						src={image_1}
 						alt='Album'
-						className='w-[700px] h-96 opacity-60'
+						className='w-[700px] h-96 opacity-70'
 					/>
 				</figure>
 				<div className='card-body items-center'>
