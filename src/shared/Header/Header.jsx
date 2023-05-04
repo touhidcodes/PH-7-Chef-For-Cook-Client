@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import ActiveRoute from "../ActiveRoute/ActiveRoute";
 import { AuthContext } from "../../context/AuthProvider";
 import { Link } from "react-router-dom";
+import empty from "../../assets/img/empty.png";
 
 const Header = () => {
 	const { user, logOut } = useContext(AuthContext);
@@ -28,7 +29,15 @@ const Header = () => {
 					<div className='dropdown dropdown-end'>
 						<label tabIndex={0} className='btn btn-ghost btn-circle avatar'>
 							<div className='w-10 rounded-full'>
-								<img src={user?.photoURL} title={user?.displayName} />
+								{user ? (
+									<div>
+										<img src={user?.photoURL} title={user?.displayName} />
+									</div>
+								) : (
+									<div>
+										<img src={empty} title='Login' />
+									</div>
+								)}
 							</div>
 						</label>
 					</div>
