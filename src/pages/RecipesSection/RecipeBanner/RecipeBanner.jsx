@@ -1,4 +1,5 @@
 import React from "react";
+import LazyLoad from "react-lazy-load";
 
 const RecipeBanner = ({ cook }) => {
 	const { id, name, picture, experience, recipes, likes, bio } = cook;
@@ -8,9 +9,9 @@ const RecipeBanner = ({ cook }) => {
 				<div className='card w-full bg-base-100 shadow-xl p-4'>
 					<div className='card-body'>
 						<div className='grid grid-cols-2 gap-5 items-center'>
-							<div>
+							<LazyLoad height={200} offset={300}>
 								<img src={picture} alt='' className='h-48 rounded' />
-							</div>
+							</LazyLoad>
 							<div>
 								<h2 className='card-title text-3xl'>{name}</h2>
 								<p className='mt-2 text-xl'>

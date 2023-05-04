@@ -1,12 +1,16 @@
 import React from "react";
 import error from "../../assets/img/error.jpg";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazy-load";
+
 const Error = () => {
 	return (
 		<div className='mt-10 px-20'>
 			<div className='grid grid-cols-2 items-center'>
 				<div className='w-full mx-auto'>
-					<img src={error} alt='' />
+					<LazyLoad height={300}>
+						<img src={error} alt='' />
+					</LazyLoad>
 				</div>
 				<div className='flex flex-col items-center'>
 					<h1 className='text-6xl font-semibold text-center mt-20 text-red-400'>

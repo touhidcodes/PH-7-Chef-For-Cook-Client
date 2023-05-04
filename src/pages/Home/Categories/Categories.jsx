@@ -3,6 +3,7 @@ import image_1 from "../../../assets/img/1.jpg";
 import image_2 from "../../../assets/img/5.jpg";
 import image_3 from "../../../assets/img/6.jpg";
 import image_4 from "../../../assets/img/2.jpg";
+import LazyLoad from "react-lazy-load";
 
 const Categories = () => {
 	return (
@@ -14,7 +15,9 @@ const Categories = () => {
 				{/* card 1 */}
 				<div className='card w-full bg-base-100 shadow-xl h-96'>
 					<figure>
-						<img src={image_1} alt='foods' className='opacity-80' />
+						<LazyLoad height={500}>
+							<img src={image_1} alt='foods' className='opacity-80' />
+						</LazyLoad>
 					</figure>
 					<div className='card-body'>
 						<h2 className='card-title text-2xl'>Bangladeshi Foods</h2>
@@ -24,7 +27,9 @@ const Categories = () => {
 				{/* card 2 */}
 				<div className='card w-full bg-base-100 shadow-xl h-96'>
 					<figure>
-						<img src={image_2} alt='foods' className='opacity-80' />
+						<LazyLoad height={500}>
+							<img src={image_2} alt='foods' className='opacity-80' />
+						</LazyLoad>
 					</figure>
 					<div className='card-body'>
 						<h2 className='card-title text-2xl'>Japanese Foods</h2>
@@ -34,7 +39,9 @@ const Categories = () => {
 				{/* card 3 */}
 				<div className='card w-full bg-base-100 shadow-xl h-96'>
 					<figure>
-						<img src={image_3} alt='foods' className='opacity-80' />
+						<LazyLoad height={500}>
+							<img src={image_3} alt='foods' className='opacity-80' />
+						</LazyLoad>
 					</figure>
 					<div className='card-body'>
 						<h2 className='card-title text-2xl'>Thai Foods</h2>
@@ -44,7 +51,9 @@ const Categories = () => {
 				{/* card 4*/}
 				<div className='card w-full bg-base-100 shadow-xl h-96'>
 					<figure>
-						<img src={image_4} alt='foods' className='opacity-80' />
+						<LazyLoad height={500}>
+							<img src={image_4} alt='foods' className='opacity-80' />
+						</LazyLoad>
 					</figure>
 					<div className='card-body'>
 						<h2 className='card-title text-2xl'>American Foods</h2>

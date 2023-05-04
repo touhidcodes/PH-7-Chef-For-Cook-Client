@@ -4,6 +4,7 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LazyLoad from "react-lazy-load";
 
 const Recipes = ({ recipe }) => {
 	const [like, setLike] = useState(true);
@@ -17,7 +18,9 @@ const Recipes = ({ recipe }) => {
 		<div>
 			<div className='card w-96 h-[920px] bg-base-100 shadow-xl'>
 				<figure>
-					<img src={image} alt={name} className='h-60 w-full' />
+					<LazyLoad height={240} width={400}>
+						<img src={image} alt={name} className='h-60 w-full' />
+					</LazyLoad>
 				</figure>
 				<div className='card-body'>
 					<h2 className='card-title'>{name}</h2>

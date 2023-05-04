@@ -9,9 +9,9 @@ import "./Banner.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
+import LazyLoad from "react-lazy-load";
 
 const Banner = () => {
-
 	return (
 		<div className='banner mt-16'>
 			<div className='grid grid-cols-1 lg:grid-cols-2 gap-4 p-3 lg:p-10'>
@@ -37,28 +37,60 @@ const Banner = () => {
 						}}
 					>
 						<SwiperSlide>
-							<img src={slider_1} alt='' className='h-60 lg:h-96 rounded-xl' />
-
-							{({ isActive }) => (
-								<div>Current slide is {isActive ? "active" : "not active"}</div>
-							)}
+							<LazyLoad height={500}>
+								<img
+									src={slider_1}
+									alt=''
+									className='h-60 lg:h-96 rounded-xl'
+								/>
+							</LazyLoad>
 						</SwiperSlide>
 						<SwiperSlide className='h-96'>
-							<img src={slider_2} alt='' className='h-60 lg:h-96 rounded-xl' />
+							<LazyLoad height={500}>
+								<img
+									src={slider_2}
+									alt=''
+									className='h-60 lg:h-96 rounded-xl'
+								/>
+							</LazyLoad>
 						</SwiperSlide>
 						<SwiperSlide>
-							<img src={slider_3} alt='' className='h-60 lg:h-96 rounded-xl' />
+							<LazyLoad height={500}>
+								<img
+									src={slider_3}
+									alt=''
+									className='h-60 lg:h-96 rounded-xl'
+								/>
+							</LazyLoad>
 						</SwiperSlide>
 						<SwiperSlide>
-							<img src={slider_4} alt='' className='h-60 lg:h-96 rounded-xl' />
+							<LazyLoad height={500}>
+								<img
+									src={slider_4}
+									alt=''
+									className='h-60 lg:h-96 rounded-xl'
+								/>
+							</LazyLoad>
 						</SwiperSlide>
 
 						<SwiperSlide>
-							<img src={slider_5} alt='' className='h-60 lg:h-96 rounded-xl' />
+							<LazyLoad height={500}>
+								<img
+									src={slider_5}
+									alt=''
+									className='h-60 lg:h-96 rounded-xl'
+								/>
+							</LazyLoad>
 						</SwiperSlide>
 
 						<SwiperSlide>
-							<img src={slider_6} alt='' className='h-60 lg:h-96 rounded-xl' />
+							<LazyLoad height={500}>
+								<img
+									src={slider_6}
+									alt=''
+									className='h-60 lg:h-96 rounded-xl'
+								/>
+							</LazyLoad>
 						</SwiperSlide>
 					</Swiper>
 				</div>
