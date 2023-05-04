@@ -1,12 +1,19 @@
 import React, { useState } from "react";
-import { BeakerIcon, HeartIcon } from "@heroicons/react/24/solid";
+import { HeartIcon } from "@heroicons/react/24/solid";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Recipes = ({ recipe }) => {
+	const [like, setLike] = useState(true);
 	const { recipe_id, name, image, ratings, ingredients, method } = recipe;
 	// console.log(recipe_id, name, image, ratings, ingredients, method);
 
+	const handleLike = () => {
+		setLike(false);
+		toast(`${name} added into your favorites`);
+	};
 	return (
 		<div>
 			<div className='card w-96 h-[920px] bg-base-100 shadow-xl'>
@@ -42,9 +49,14 @@ const Recipes = ({ recipe }) => {
 							/>
 							<p className='ml-2 font-semibold'>{ratings}</p>
 						</div>
-						<button className='btn  btn-error'>
+						<button
+							className='btn  btn-error'
+							onClick={handleLike}
+							disabled={!like}
+						>
 							<p className=' text-white'>Like </p>
 							<HeartIcon className='h-6 w-6 ml-3 text-white' />
+							<ToastContainer />
 						</button>
 					</div>
 				</div>
