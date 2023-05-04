@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import Recipes from "../Recipes/Recipes";
 
 const RecipesContainer = ({ chef }) => {
-	console.log("chef", chef);
-
 	const { recipes, cook_name } = chef || {};
 
-	console.log("chef info", recipes);
 	return (
 		<div className='mt-20'>
 			<h4 className='text-3xl font-semibold ml-4'>

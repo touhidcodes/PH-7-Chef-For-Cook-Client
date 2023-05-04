@@ -15,8 +15,6 @@ const RecipesSection = () => {
 			.then((data) => setRecipeData(data));
 	}, []);
 
-	console.log("all data", recipeData);
-
 	const chef = recipeData?.find((data) => parseInt(data.id) === cook.id);
 	console.log("chef data", chef);
 	return (

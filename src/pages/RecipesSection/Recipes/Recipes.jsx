@@ -8,7 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 const Recipes = ({ recipe }) => {
 	const [like, setLike] = useState(true);
 	const { recipe_id, name, image, ratings, ingredients, method } = recipe;
-	// console.log(recipe_id, name, image, ratings, ingredients, method);
 
 	const handleLike = () => {
 		setLike(false);
