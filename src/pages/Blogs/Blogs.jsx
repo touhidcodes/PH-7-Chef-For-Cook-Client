@@ -1,11 +1,17 @@
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import React from "react";
+import PDF from "./PDF/PDF";
 
 const Blogs = () => {
 	return (
 		<div className='mt-10'>
 			<div className='flex flex-col items-center'>
 				<h4 className='text-4xl font text-red-400 text-center'>Blog Page</h4>
-				<button className='btn btn-error mt-5 text-white'>Download PDF</button>
+				<PDFDownloadLink document={<PDF />} fileName='form'>
+					<button className='btn btn-error mt-5 text-white'>
+						Download PDF
+					</button>
+				</PDFDownloadLink>
 			</div>
 			<div className='card w-10/12 lg:w-8/12 bg-base-100 shadow-xl mx-auto mt-10'>
 				<div className='card-body'>
