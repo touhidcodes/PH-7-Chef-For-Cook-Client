@@ -31,7 +31,11 @@ const Header = () => {
 							<div className='w-10 rounded-full'>
 								{user ? (
 									<div>
-										<img src={user?.photoURL} title={user?.displayName} />
+										<img
+											src={user?.photoURL}
+											title={user?.displayName}
+											className='h-full w-full'
+										/>
 									</div>
 								) : (
 									<div>
